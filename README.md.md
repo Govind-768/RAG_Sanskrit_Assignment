@@ -1,121 +1,65 @@
-##### **Sanskrit Document Retrieval-Augmented Generation(RAG) System**
+# Sanskrit Document Retrieval-Augmented Generation (RAG) System
 
+This project is a simple implementation of a Retrieval-Augmented Generation (RAG) system using Sanskrit documents. The main aim of this project is to retrieve relevant information from Sanskrit text and generate answers for user queries. The complete pipeline is designed to run only on CPU, as mentioned in the assignment.
 
+## Project Overview
 
-This project is a simple implementation of a Retrieval-Augmented Generation (RAG) system built using Sanskrit documents. The system retrieves relevant text from Sanskrit documents and generates answers for user queries. The complete pipeline is designed to run only on CPU, as required in the assignment.
+- Sanskrit documents are used as the main knowledge source  
+- Text is preprocessed and divided into smaller chunks  
+- Relevant chunks are retrieved based on the user query  
+- A lightweight language model generates answers using the retrieved text  
+- No GPU is used at any stage  
 
+## Folder Structure
 
-
-##### **Project Overview**
-
-
-
-* Sanskrit documents are used as the knowledge source
-* Text is preprocessed and divided into smaller chunks
-* Relevant chunks are retrieved based on  the user query
-* A lightweight language model generates an answer using the retrieved text
-* No GPU is used at any stage
-
-
-
-##### **Folder Structure**
-
-
-
-RAG\_Sanskrit\_GovindSingh/
-
-│
-
+```
+RAG_Sanskrit_Assignment/
 ├── code/
-
 │   ├── preprocess.py
-
 │   ├── retrieve.py
-
-│   ├── generate.py
-
-│
-
+│   └── generate.py
 ├── data/
-
-│   └── Rag\_docs.txt
-
-│
-
+│   └── Rag_docs.txt
 ├── report/
-
-│   └── Technical\_Report\_RAG\_Assign.pdf
-
-│
-
+│   └── Technical_Report_RAG_Assign.pdf
 └── README.md
+```
 
 
 
-##### **Requirements**
+## Requirements
 
-
-
-* Python 3.9 or above
-* Required Python libraries:
-
-&nbsp;	*Scikit-learn*
-
-	*transformers*
-
-	*torch*
-
-
+- Python 3.9 or above  
+- Required Python libraries:
+  - scikit-learn  
+  - transformers  
+  - torch  
 
 Install dependencies using:
-
- *pip install scikit-learn transformers torch*
-
+pip install scikit-learn transformers torch
 
 
-##### <b>How to run the project</b>
+## How to Run the Project
+
+Step 1: Preprocess the Sanskrit documents  
+python code/preprocess.py
 
 
-
-Step 1: Preprocess the Sanskrit documents
-
-&nbsp;
-
-&nbsp;*python code/preprocess.py*
+Step 2: Run the retrieval module  
+python code/retrieve.py
 
 
-
-Step 2: Run the retrieval module
-
-
-
-&nbsp;*python code/retrieve.py*
+Step 3: Run the generation module  
+python code/generate.py
 
 
+## Notes
 
-Step 3: Run the generation module
+- The project uses a lightweight language model for text generation  
+- Output quality depends on the retrieved context  
+- Some answers may not be perfect, but they are based on the document content  
+- The focus of this project is learning the RAG workflow rather than language perfection  
 
-&nbsp;
+## Conclusion
 
-*python code/generate.py*
-
-
-
-##### <b>Notes</b>
-
-
-
-* The project uses a lightweight language model for text generation
-* Output quality depends on the retrieved context
-* The focus of the project is on understanding the RAG workflow rather than language perfection
-
-
-
-##### **Conclusion**
-
-
-
-This project demonstrates a basic functional RAG pipeline for Sanskrit documents. It follows the assignment guidelines and provide a clear understanding of preprocessing, retrieval, and generation in a CPU-based setup.
-
-&nbsp;
-
+This project demonstrates a basic and working RAG pipeline for Sanskrit documents. It follows the assignment guidelines and provides a clear understanding of preprocessing, retrieval, and generation in a CPU-based setup.
