@@ -12,20 +12,19 @@ This project is a simple implementation of a Retrieval-Augmented Generation (RAG
 
 ## Folder Structure
 
+```
 RAG_Sanskrit_Assignment/
-│
 ├── code/
-│ ├── preprocess.py
-│ ├── retrieve.py
-│ ├── generate.py
-│
+│   ├── preprocess.py
+│   ├── retrieve.py
+│   └── generate.py
 ├── data/
-│ └── Rag_docs.txt
-│
+│   └── Rag_docs.txt
 ├── report/
-│ └── Technical_Report_RAG_Assign.pdf
-│
+│   └── Technical_Report_RAG_Assign.pdf
 └── README.md
+```
+
 
 
 ## Requirements
