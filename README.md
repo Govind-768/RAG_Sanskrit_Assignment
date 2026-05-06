@@ -1,66 +1,175 @@
-# Sanskrit Document Retrieval-Augmented Generation (RAG) System
+# Sanskrit RAG Question Answering System
 
-This project is a simple implementation of a Retrieval-Augmented Generation (RAG) system using Sanskrit documents. The main aim of this project is to retrieve relevant information from Sanskrit text and generate answers for user queries. The complete pipeline is designed to run only on CPU, as mentioned in the assignment.
+## Overview
 
-## Project Overview
+This project implements a lightweight Retrieval-Augmented Generation (RAG) based Question Answering system using Sanskrit documents as the primary knowledge source.
 
-- Sanskrit documents are used as the main knowledge source  
-- Text is preprocessed and divided into smaller chunks  
-- Relevant chunks are retrieved based on the user query  
-- A lightweight language model generates answers using the retrieved text  
-- No GPU is used at any stage  
+The system retrieves relevant contextual information from Sanskrit text documents and answers user queries in English using transformer-based NLP models. The complete pipeline is designed to run efficiently on CPU without requiring GPU acceleration.
 
-## Folder Structure
+The project demonstrates the practical workflow of document preprocessing, information retrieval, contextual understanding, and question answering using modern Natural Language Processing techniques.
 
+---
+
+## Features
+
+- Sanskrit document preprocessing
+- Text chunking pipeline
+- Retrieval-Augmented Question Answering
+- English query support
+- Context-based answer generation
+- Lightweight CPU-only implementation
+- Modular NLP project structure
+- Automatic output saving
+- Transformer-based QA pipeline
+- TF-IDF based semantic retrieval
+
+---
+
+## Technologies Used
+
+- Python
+- Scikit-learn
+- HuggingFace Transformers
+- PyTorch
+- NumPy
+
+---
+
+## Project Structure
+
+```text
 RAG_Sanskrit_Assignment/
 │
-├── code/
-│ ├── preprocess.py
-│ ├── retrieve.py
-│ ├── generate.py
-│
 ├── data/
-│ └── Rag_docs.txt
+│   └── Rag_docs.txt
 │
-├── report/
-│ └── Technical_Report_RAG_Assign.pdf
+├── outputs/
+│   └── sample_output.txt
 │
-└── README.md
+├── src/
+│   ├── __init__.py
+│   ├── preprocess.py
+│   ├── retrieve.py
+│   ├── generate.py
+│   └── utils.py
+│
+├── main.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
 
+---
 
-## Requirements
+## Workflow
 
-- Python 3.9 or above  
-- Required Python libraries:
-  - scikit-learn  
-  - transformers  
-  - torch  
+1. Load Sanskrit documents
+2. Clean and preprocess text
+3. Split text into smaller chunks
+4. Retrieve relevant chunks using TF-IDF similarity
+5. Generate contextual answers using a transformer QA model
+6. Save outputs automatically
 
-Install dependencies using:
-pip install scikit-learn transformers torch
+---
 
+## Model Used
 
-## How to Run the Project
+### Retrieval
+- TF-IDF Vectorizer
+- Cosine Similarity
 
-Step 1: Preprocess the Sanskrit documents 
-python code/preprocess.py 
+### Question Answering
+- DistilBERT Question Answering Pipeline
+- Model:
+  `distilbert-base-cased-distilled-squad`
 
-Step 2: Run the retrieval module  
-python code/retrieve.py
+---
 
-Step 3: Run the generation module  
-python code/generate.py
+## Example Queries
 
+```text
+Who was in King Bhoj's court?
+```
 
-## Notes
+```text
+What is the moral of the story?
+```
 
-- The project uses a lightweight language model for text generation  
-- Output quality depends on the retrieved context  
-- Some answers may not be perfect, but they are based on the document content  
-- The focus of this project is learning the RAG workflow rather than language perfection  
+```text
+Who was Ghantakarna?
+```
+
+---
+
+## Sample Output
+
+```text
+Question:
+Who was in King Bhoj's court?
+
+Answer:
+poet kAlIdAsa
+```
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Govind-768/RAG_Sanskrit_Assignment.git
+```
+
+---
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Run Project
+
+```bash
+python main.py
+```
+
+---
+
+## Future Improvements
+
+- Add multilingual query support
+- Use sentence embeddings for semantic retrieval
+- Integrate vector databases like FAISS
+- Add Streamlit web interface
+- Improve Sanskrit-specific NLP processing
+- Add conversational memory support
+
+---
+
+## Learnings
+
+This project helped in understanding:
+
+- Retrieval-Augmented Generation workflows
+- Transformer-based Question Answering
+- Text preprocessing techniques
+- Information retrieval systems
+- NLP pipeline design
+- Context-aware answer generation
+- CPU-efficient transformer deployment
+
+---
 
 ## Conclusion
 
-This project demonstrates a basic and working RAG pipeline for Sanskrit documents. It follows the assignment guidelines and provides a clear understanding of preprocessing, retrieval, and generation in a CPU-based setup.
+This project demonstrates a lightweight and practical implementation of a Retrieval-Augmented Question Answering system using Sanskrit documents. It combines retrieval techniques with transformer-based NLP models to provide contextual answers for English queries while maintaining a CPU-friendly architecture.
 
+---
 
+## Author
+
+Govind Singh
